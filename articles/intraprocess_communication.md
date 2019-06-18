@@ -459,6 +459,18 @@ The following results have been obtained on a RaspberryPi 2.
 | Mont Blanc                    |   off    | Fast-RTPS     |     1500     |   30    |   130    |
 | Mont Blanc                    | standard | Fast-RTPS     |      950     |   26    | 154->159 |
 | Mont Blanc                    |   new    | Fast-RTPS     |      220     |   14    |   130    |
+| Sierra Nevada                 |   off    |     DPS       |      709     |   37    |     9    |
+| Sierra Nevada                 | standard |     DPS       |      866     |   41    |    12    |
+| Sierra Nevada                 |   new    |     DPS       |      226     |    9    |     9    |
+| Mont Blanc                    |   off    |     DPS       |     2676     |   84    |    19    |
+| Mont Blanc                    | standard |     DPS       |     2659     |   82    |    15    |
+| Mont Blanc                    |   new    |     DPS       |      221     |   13    |    11    |
+| Sierra Nevada                 |   off    | CycloneDDS    |      189     |    9    |    11    |
+| Sierra Nevada                 | standard | CycloneDDS    |      335     |   10    |    14    |
+| Sierra Nevada                 |   new    | CycloneDDS    |      172     |    9    |    12    |
+| Mont Blanc                    |   off    | CycloneDDS    |      254     |   14    |    15    |
+| Mont Blanc                    | standard | CycloneDDS    |      319     |   15    |    20    |
+| Mont Blanc                    |   new    | CycloneDDS    |      198     |   12    |    17    |
 
 For what concerns latency and CPU usage, Sierra Nevada behaves almost the same regardless if standard IPC is enabled or not.
 This is due to the fact that most of its messages are very small in size.
