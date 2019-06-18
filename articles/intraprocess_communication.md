@@ -490,6 +490,12 @@ This use-case is common when using tools such as `rosbag` or `rviz`.
 | Sierra Nevada + debug node    |   off    | Fast-RTPS     |      800     |   22    |    50    |
 | Sierra Nevada + debug node    | standard | Fast-RTPS     |     1100     |   35    |  60->65  |
 | Sierra Nevada + debug node    |   new    | Fast-RTPS     |      180     |   15    |    32    |
+| Sierra Nevada + debug node    |   off    |      DPS      |      722     |   37    |     9    |
+| Sierra Nevada + debug node    | standard |      DPS      |     2053     |   65    |    13    |
+| Sierra Nevada + debug node    |   new    |      DPS      |      306     |   43    |     9    |
+| Sierra Nevada + debug node    |   off    | CycloneDDS    |      730     |   21    |    50    |
+| Sierra Nevada + debug node    | standard | CycloneDDS    |     1019     |   32    |    60    |
+| Sierra Nevada + debug node    |   new    | CycloneDDS    |      195     |   17    |    12    |
 
 
 These results show that if there is at least one node in a different process, with the current implementation it is better to keep intra-process communication disabled.
