@@ -462,15 +462,17 @@ The following results have been obtained on a RaspberryPi 2.
 | Sierra Nevada                 |   off    |     DPS       |      709     |   37    |     9    |
 | Sierra Nevada                 | standard |     DPS       |      866     |   41    |    12    |
 | Sierra Nevada                 |   new    |     DPS       |      226     |    9    |     9    |
-| Mont Blanc                    |   off    |     DPS       |     2676     |   84    |    19    |
-| Mont Blanc                    | standard |     DPS       |     2659     |   82    |    15    |
-| Mont Blanc                    |   new    |     DPS       |      221     |   13    |    11    |
+| Mont Blanc                    |   off    |     DPS       |      n/a     |  n/a    |   n/a    |
+| Mont Blanc                    | standard |     DPS       |     2691     |   78    |    16    |
+| Mont Blanc                    |   new    |     DPS       |      174     |   11    |    11    |
 | Sierra Nevada                 |   off    | CycloneDDS    |      189     |    9    |    11    |
 | Sierra Nevada                 | standard | CycloneDDS    |      335     |   10    |    14    |
 | Sierra Nevada                 |   new    | CycloneDDS    |      172     |    9    |    12    |
-| Mont Blanc                    |   off    | CycloneDDS    |      254     |   14    |    15    |
-| Mont Blanc                    | standard | CycloneDDS    |      319     |   15    |    20    |
-| Mont Blanc                    |   new    | CycloneDDS    |      198     |   12    |    17    |
+| Mont Blanc                    |   off    | CycloneDDS    |      494     |   16    |    17    |
+| Mont Blanc                    | standard | CycloneDDS    |      332     |   15    |    21    |
+| Mont Blanc                    |   new    | CycloneDDS    |      179     |   10    |    14    |
+
+Note: Is not possible to run Mont Blanc with IPC off using RMW_DPS, due Mont Blanc biggest messages exceed the size of the maximum UDP datagram size. As DPS doesn't support message segmentation, those messages can not be sent.
 
 For what concerns latency and CPU usage, Sierra Nevada behaves almost the same regardless if standard IPC is enabled or not.
 This is due to the fact that most of its messages are very small in size.
