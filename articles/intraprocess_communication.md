@@ -463,6 +463,20 @@ The following results have been obtained on a RaspberryPi 2.
 | Mont Blanc                    |   off    | Fast-RTPS     |     1500     |   30    |   130    |
 | Mont Blanc                    | standard | Fast-RTPS     |      950     |   26    | 154->159 |
 | Mont Blanc                    |   new    | Fast-RTPS     |      220     |   14    |   130    |
+| Sierra Nevada                 |   off    |     DPS       |      709     |   37    |     9    |
+| Sierra Nevada                 | standard |     DPS       |      866     |   41    |    12    |
+| Sierra Nevada                 |   new    |     DPS       |      226     |    9    |     9    |
+| Mont Blanc                    |   off    |     DPS       |      n/a     |  n/a    |   n/a    |
+| Mont Blanc                    | standard |     DPS       |     2691     |   78    |    16    |
+| Mont Blanc                    |   new    |     DPS       |      174     |   11    |    11    |
+| Sierra Nevada                 |   off    | CycloneDDS    |      189     |    9    |    11    |
+| Sierra Nevada                 | standard | CycloneDDS    |      335     |   10    |    14    |
+| Sierra Nevada                 |   new    | CycloneDDS    |      172     |    9    |    12    |
+| Mont Blanc                    |   off    | CycloneDDS    |      494     |   16    |    17    |
+| Mont Blanc                    | standard | CycloneDDS    |      332     |   15    |    21    |
+| Mont Blanc                    |   new    | CycloneDDS    |      179     |   10    |    14    |
+
+Note: Is not possible to run Mont Blanc with IPC off using RMW_DPS, due Mont Blanc biggest messages exceed the size of the maximum UDP datagram size. As DPS doesn't support message segmentation, those messages can not be sent.
 
 For what concerns latency and CPU usage, Sierra Nevada behaves almost the same regardless if standard IPC is enabled or not.
 This is due to the fact that most of its messages are very small in size.
@@ -482,6 +496,12 @@ This use-case is common when using tools such as `rosbag` or `rviz`.
 | Sierra Nevada + debug node    |   off    | Fast-RTPS     |      800     |   22    |    50    |
 | Sierra Nevada + debug node    | standard | Fast-RTPS     |     1100     |   35    |  60->65  |
 | Sierra Nevada + debug node    |   new    | Fast-RTPS     |      180     |   15    |    32    |
+| Sierra Nevada + debug node    |   off    |      DPS      |      722     |   37    |     9    |
+| Sierra Nevada + debug node    | standard |      DPS      |     2053     |   65    |    13    |
+| Sierra Nevada + debug node    |   new    |      DPS      |      306     |   43    |     9    |
+| Sierra Nevada + debug node    |   off    | CycloneDDS    |      730     |   21    |    50    |
+| Sierra Nevada + debug node    | standard | CycloneDDS    |     1019     |   32    |    60    |
+| Sierra Nevada + debug node    |   new    | CycloneDDS    |      195     |   17    |    12    |
 
 
 These results show that if there is at least one node in a different process, with the current implementation it is better to keep intra-process communication disabled.
